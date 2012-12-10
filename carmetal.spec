@@ -3,13 +3,13 @@
 # in wrapper script
 
 Name:		carmetal
-Version:	3.7.1
-Release:	%mkrel 1
+Version:		3.7.1
+Release:		1
 BuildArch:	noarch
 URL:		http://db-maths.nuxit.net/CaRMetal/
-Source0:	%{name}-%{version}.tar.bz2
-Summary:	Dynamic geometry software with highly ergonomic UI
-License:	LGPLv3
+Source0:		%{name}-%{version}.tar.bz2
+Summary:		Dynamic geometry software with highly ergonomic UI
+License:		LGPLv3
 Group:		Sciences/Mathematics
 Requires:	jre-sun
 
@@ -39,7 +39,6 @@ using advanced macros.
 %setup -q
 
 %install
-%__rm -rf %{buildroot}
 %__rm -f uninstall
 %__rm -f CaRMetalUninstall.png
 %__rm -f CaRMetal.desktop
@@ -48,7 +47,7 @@ using advanced macros.
 %__install -d %{buildroot}%{_datadir}/%{name}
 %__install -d %{buildroot}%{_datadir}/pixmaps
 
-%__cp -r ./* %{buildroot}%{_datadir}/%{name}/
+cp -r ./* %{buildroot}%{_datadir}/%{name}/
 %__install -m 644 CaRMetal.png %{buildroot}%{_datadir}/pixmaps/CaRMetal.png
 
 # wrapper script
@@ -74,13 +73,17 @@ StartupNotify=false
 Terminal=false
 EOF
 
-%clean
-%__rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,0755)
 %{_bindir}/carmetal
 %{_datadir}/pixmaps/CaRMetal.png
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/%{name}/*
+
+
+
+%changelog
+* Sun Feb 19 2012 Andrey Bondrov <abondrov@mandriva.org> 3.7.1-1
++ Revision: 777309
+- imported package carmetal
 
