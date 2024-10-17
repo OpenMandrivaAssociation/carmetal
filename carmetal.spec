@@ -6,7 +6,7 @@ Name:		carmetal
 Version:		3.7.1
 Release:		2
 BuildArch:	noarch
-URL:		http://db-maths.nuxit.net/CaRMetal/
+URL:		https://db-maths.nuxit.net/CaRMetal/
 Source0:		%{name}-%{version}.tar.bz2
 Summary:		Dynamic geometry software with highly ergonomic UI
 License:		LGPLv3
